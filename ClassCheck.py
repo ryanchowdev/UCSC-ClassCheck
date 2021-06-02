@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import tkinter as tk
 
 window = tk.Tk()
+window.title("UCSC Class Checker")
 
 def get_url(entry):
     url = entry.get()
@@ -28,18 +29,22 @@ def scrape(target):
     print(f'Status: {enrolled} / {capacity} spots filled.')
     if available:
         print('CLASS AVAILABLE')
-        print('\a') # beep
+        print('\a')   # Beep to notify user
     else:
         print('CLASS NOT AVAILABLE')
 
-    window.after(3000, lambda:scrape(url)) # sleep for 3s
+    window.after(3000, lambda:scrape(url))   # Sleep for 3s
 
 def main():
-    # sample URL
+    # Sample URL
     # https://pisa.ucsc.edu/cs9/prd/sr9_2013/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyMTgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMjIzOTIiO30%3D
+
+    frame_instr = tk.Frame(window)
+    frame_entry = tk.Frame(window)
+    frame_button = tk.Frame(window)
     
-    instruction = tk.Label(
-        window,
+    instr = tk.Label(
+        frame_instr,
         text=('Enter the class URL. '
             'From MyUCSC > Enrollment > Class Search, click on the class you want and copy the URL.\n'
             'It should look like https://pisa.ucsc.edu/...'
@@ -48,19 +53,23 @@ def main():
     )
 
     entry = tk.Entry(
-        window,
-        width=150,
+        frame_entry,
+        width=100,
     )
 
     button = tk.Button(
-        window,
+        frame_button,
         text='Go!',
-        command=lambda: get_url(entry)
+        width=5,
+        command=lambda:get_url(entry)
     )
 
-    instruction.pack()
-    button.pack()
+    frame_instr.grid(row=0, column=0)
+    instr.pack()
+    frame_entry.grid(row=1, column=0, padx=5)
     entry.pack()
+    frame_button.grid(row=1, column=1, padx=5)
+    button.pack()
 
     window.mainloop()
 
