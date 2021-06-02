@@ -40,7 +40,10 @@ def main():
     
     instruction = tk.Label(
         window,
-        text='Enter the class URL. It should look like https://pisa.ucsc.edu/...',
+        text=('Enter the class URL. '
+            'From MyUCSC > Enrollment > Class Search, click on the class you want and copy the URL.\n'
+            'It should look like https://pisa.ucsc.edu/...'
+            ),
         height=5
     )
 
@@ -52,7 +55,6 @@ def main():
     button = tk.Button(
         window,
         text='Go!',
-        height=1,
         command=lambda: get_url(entry)
     )
 
