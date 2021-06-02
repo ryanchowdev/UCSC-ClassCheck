@@ -24,3 +24,5 @@ Now you can run the web scraper.
 ```bash
 python3 ClassCheck.py
 ```
+  
+Or simply double click the icon to open it with python.
