@@ -67,7 +67,8 @@ def scrape(target):
 
     window.title(class_name)
     status.config(text=localtime+message_1+message_2)
-    print('\a')  # Beep to alert user
+    if available:
+        print('\a')  # Beep to alert user
 
     window.after(3000, lambda:scrape(url))  # Sleep for 3s
 
