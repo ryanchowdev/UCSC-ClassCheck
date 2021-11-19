@@ -1,7 +1,5 @@
 # UCSC-ClassCheck
-A python BeautifulSoup web scraper that checks the availability of UCSC classes.  
-NOTE: While this project does have full functionality, it is a work-in-progress and needs to be refined.  
-In particular, the GUI is currently unfinished.  
+A python BeautifulSoup web scraper that checks the availability of UCSC classes.    
   
 ## Running the web scraper locally
 The following instructions are for UNIX-like operating systems.  
