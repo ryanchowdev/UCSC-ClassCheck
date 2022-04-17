@@ -2,7 +2,7 @@
 #
 # A web scraper for detecting availability of UCSC classes.
 #
-# Author: https://github.com/ryanyc2k
+# Author: https://github.com/ryanchowdev
 import time
 import requests
 from bs4 import BeautifulSoup
